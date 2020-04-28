@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<!-- 
+HTML: HiperText texto que contm link para outros documentos.
+
+MARKUP: Terá marcações
+Exemplo: <tag> 
+
+LANGUAGE
+Para me comunicar de certa maeiroa. Sintaxe especifica para escrita.
+
+SINTAXE: Maneira correta de se escrever.
+SEMANTICA: Maneira escrever de uma maneira que faça sentido. 
+-->
+
+<html>
+
+<head>
+    <!--são configurações da minha página-->
+    <title>Doe sangue! Doe vida!</title>
+
+    <!-- seletor -->
+    <link rel="stylesheet" href=".//style.css"> <!-- href colocar o link "URL"-->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            color: red;
+            background-color: white;
+
+        }
+    </style>
+</head>
+
+
+<body>
+    <!-- Aqui vem todo conteudo visivel para o usuario, dentro de certa página -->
+
+
+    <header>
+        <img class="logo" src=".//logo.png" alt="DOE SANGUE">
+
+        <h2>A sua doação importa</h2>
+        <p> Até 3 vidas com 1 doação</p>
+        <p> Mais de 38.000 doações são necessárioas todos os dias</p>
+        <p>Apenas 1,9% da população brasileira, doa sangue</p>
+
+        <button>Quero ajudar</button>
+
+        <!--Conteúdo do Topo, indicar parte introdutória-->
+    </header>
+
+    <!-- input (entrada de texto)-->
+    <!--output (Saída do Texto)-->
+
+    <!--Seção - Formulário -->
+    <section class="form hide-form">
+        <h2> Entre na lista de doadores</h2>
+        <form action="/" method="POST">
+            <input type="text" name="name" placeholder="Nome Completo">
+            <input type="text" name="email" placeholder="Email">
+            <input type="text" name="blood" placeholder="Tipo sanguineo">
+            <input type="text" name="phone" placeholder="Número de telefone">
+
+            <button>Quero ajudar</button>
+        </form>
+
+    </section>
+
+    <main>
+        <!--Conteúdo Central: conteudo principal-->
+        <h2>Últimos <span>doadores</span></h2>
+
+        <section class="donors">
+            <!-- Tag que faz sentido (semantica) // Atributos ex. tamanho cor // Classificar tag  (class) (classificação de doares)-->
+            <!-- "Conteiner" agrupar conteudos / Nome e tipo de sangue do doador-->
+              <!-- <div class="donor">
+                <div class="blood">AB-</div>
+                <p> Nelson Ferreira</p>
+                </div> -->
+
+            {%  for donor in donors  %}
+            <!--estrurura de repetição-->
+
+            <div class="donor">
+                <div class="blood">{{donor.blood}}</div>
+                <p>{{donor.name}}</p>
+            </div>
+
+            {%endfor%}
+        </section>
+
+    </main>
+
+    <!-- Rodapé-->
+    <footer> Com ❤ Janaina Franquis</footer>
+
+    <script src=".//scripts.js"></script>
+    <!-- Link do script é colocado nesta posição, script pode demorar um pouco pra carregar   -->
+
+</body>
+
+</html> 
